@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazolar | Electricidad y Energía Fotovoltaica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mazolar-blue: #003366;
+            --mazolar-orange: #FF8C00;
+            --mazolar-white: #FFFFFF;
+            --mazolar-gray: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: var(--mazolar-white);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--mazolar-blue);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--mazolar-orange);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--mazolar-orange);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--mazolar-orange);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 51, 102, 0.5)), 
+                        url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h2 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.4rem; max-width: 800px; margin-bottom: 2rem; }
+
+        .services { padding: 5rem 5%; text-align: center; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--mazolar-gray);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            border-top: 5px solid var(--mazolar-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover { transform: translateY(-10px); border-top-color: var(--mazolar-orange); }
+        .service-card i { font-size: 4rem; color: var(--mazolar-orange); margin-bottom: 1rem; }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .whatsapp-btn:hover { background-color: #128C7E; transform: scale(1.05); }
+
+        footer { background-color: var(--mazolar-blue); color: white; text-align: center; padding: 3rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>MAZO<span>LAR</span></h1></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="proyectos.html">Volver al Portafolio</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Energía Inteligente para tu Hogar</h2>
+        <p>Expertos en instalaciones fotovoltaicas y soluciones eléctricas profesionales en Alicante.</p>
+        <a href="https://wa.me/34614622641" target="_blank" class="whatsapp-btn">
+            <i class='bx bxl-whatsapp'></i> Contactar por WhatsApp
+        </a>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios Especializados</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class='bx bx-sun'></i>
+                <h3>Energía Solar</h3>
+                <p>Diseño e instalación de paneles solares para autoconsumo. Reduce tu factura de luz hasta un 70%.</p>
+            </div>
+            <div class="service-card">
+                <i class='bx bx-bolt-circle'></i>
+                <h3>Instalaciones Eléctricas</h3>
+                <p>Mantenimiento, boletines y reformas eléctricas integrales con la máxima seguridad certificada.</p>
+            </div>
+            <div class="service-card">
+                <i class='bx bx-ev-station'></i>
+                <h3>Puntos de Recarga</h3>
+                <p>Instalamos cargadores para vehículos eléctricos en garajes comunitarios y viviendas unifamiliares.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mazolar - Electricidad y Fotovoltaica</p>
+        <p>📍 Elche / Alicante, España</p>
+    </footer>
+</body>
+</html>

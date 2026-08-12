@@ -1,0 +1,397 @@
+/* Variables de color estilo Bluey */
+:root {
+    --bluey-navy: #243c5c;      /* Azul oscuro (orejas/manchas) */
+    --bluey-light: #d1e8ff;     /* Azul claro (cuerpo) */
+    --bluey-white: #ffffff;
+    --bluey-accent: #91b2c7;    /* Azul intermedio */
+    --text-main: #1a2a40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: var(--bluey-light);
+    color: var(--text-main);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Efecto Backlight global para todas las imágenes */
+img {
+    filter: drop-shadow(0 0 5px rgba(36, 60, 92, 0.2));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--bluey-navy);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+/* Avatar Circular */
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid var(--bluey-accent);
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    background-color: white;
+    /* Backlight específico para el contenedor circular del avatar */
+    box-shadow: 0 0 10px rgba(145, 178, 199, 0.4);
+    /* Fixes definitivos para redondear en móviles */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    isolation: isolate;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.avatar-link {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nombre en el Sidebar */
+.profile-name {
+    text-align: center;
+    font-size: 1.1rem; /* Ajustado porque la fuente pixel es más ancha */
+    margin-bottom: 2rem;
+    color: var(--bluey-light); /* Relleno azul claro como el fondo */
+    font-family: 'Press Start 2P', cursive; /* Fuente 80s Retro */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 2.5px black; /* Contorno negro más grueso */
+    paint-order: stroke fill;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+/* Menú de Navegación */
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar-nav ul li a {
+    color: var(--bluey-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover, .sidebar-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Redes Sociales */
+.social-footer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: scale(1.2);
+    color: var(--bluey-light);
+}
+
+/* Contenido Principal */
+.main-content {
+    margin-left: 260px; /* Desplazamiento por el sidebar fijo */
+    margin-right: 260px; /* Espacio para la columna de Homer */
+    padding: 3rem;
+    padding-bottom: 100px; /* Espacio extra para el footer */
+    width: 100%;
+}
+
+.hero-actions {
+    margin-bottom: 2.5rem; /* Separa los botones del cuadro blanco de abajo */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-top: 2rem;
+}
+
+.content-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(145, 178, 199, 0.2);
+}
+
+/* Estilo para imágenes/videos en las entradas */
+.entry-media {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid rgba(145, 178, 199, 0.2);
+    box-shadow: 0 10px 30px rgba(36, 60, 92, 0.1);
+    display: block;
+}
+
+/* Efecto Wes Bos Backlight en Hover */
+.content-card:hover, img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(36, 60, 92, 0.15), 
+                0 0 25px rgba(145, 178, 199, 0.6);
+    filter: drop-shadow(0 10px 15px rgba(145, 178, 199, 0.7));
+}
+
+/* Estilo Retro Neubrutalista */
+.retro-box {
+    background-color: #bcbcbc; /* Gris clásico de hardware de los 80 */
+    border: 3px solid #000;
+    padding: 25px;
+    margin: 30px 0;
+    /* Doble sombra: primero el azul de la barra, luego el negro */
+    box-shadow: 8px 8px 0px 0px var(--bluey-navy), 16px 16px 0px 0px #000;
+    line-height: 1.6;
+    transition: all 0.4s ease; /* Añadido para suavizar la iluminación */
+}
+
+/* Efecto de iluminación para cuadros retro */
+.retro-box:hover {
+    transform: translateY(-5px) scale(1.01);
+    /* Mantenemos la sombra sólida retro y añadimos el resplandor (glow) */
+    box-shadow: 8px 8px 0px 0px var(--bluey-navy), 
+                16px 16px 0px 0px #000,
+                0 0 25px rgba(145, 178, 199, 0.8);
+    filter: drop-shadow(0 10px 15px rgba(145, 178, 199, 0.7));
+}
+
+.retro-box p {
+    margin-bottom: 15px;
+    font-size: 0.9rem; /* Aumentado para igualar el tamaño visual en todos los bloques */
+    color: white; /* Relleno blanco */
+    font-family: 'Press Start 2P', cursive; /* Fuente 80s Retro */
+    line-height: 1.8;
+    -webkit-text-stroke: 1.5px black; /* Contorno negro más grueso */
+    paint-order: stroke fill;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* El estilo 80s suele ir en mayúsculas */
+    text-shadow: none;
+}
+
+.btn {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #bcbcbc; /* Fondo gris para botones */
+    color: white; /* Relleno blanco para las letras */
+    -webkit-text-stroke: 1px black; /* Contorno negro para las letras */
+    paint-order: stroke fill;
+    border: 3px solid #000;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0px 0px #000; /* Sombra sólida neubrutalista */
+    margin-right: 15px;
+    margin-top: 10px;
+    transition: all 0.1s ease;
+}
+
+.btn:active {
+    transform: translate(6px, 6px); /* Efecto de hundimiento al hacer clic */
+    box-shadow: 0px 0px 0px 0px #000;
+}
+.retro-box p:last-child { margin-bottom: 0; }
+
+/* Ajustes para elementos dentro del retro-box */
+.retro-box h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: white;
+    -webkit-text-stroke: 1.5px black;
+    paint-order: stroke fill;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Excepción para la frase del objetivo (se mantiene normal) */
+.retro-box em {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    -webkit-text-stroke: 0;
+    color: var(--text-main);
+    text-transform: none;
+    font-style: italic;
+    letter-spacing: normal;
+}
+
+/* Estilo de texto 80s sin recuadro */
+.intro-text-80s {
+    margin: 2rem 0;
+}
+
+.intro-text-80s p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.8;
+    -webkit-text-stroke: 1.5px black;
+    paint-order: stroke fill;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.intro-text-80s p:last-child { margin-bottom: 0; }
+
+/* Footer Fijo Retro (El suelo de Homer) */
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 260px; /* Empieza después del sidebar */
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    height: 50px; /* Altura fija para alinear los pies de Homer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    z-index: 1000;
+    border-top: 2px solid #333; /* Una línea sutil para separar */
+}
+
+/* Sidebar Derecha (Homer Simpson) */
+.right-sidebar {
+    width: 260px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none; /* Permite clicks a través del espacio vacío */
+    z-index: 1001;
+}
+
+.homer-img {
+    width: 180px; /* Ajustado para que no tape demasiado contenido */
+    height: auto;
+    margin-bottom: 50px; /* Alineación exacta con el borde superior del footer */
+    /* Sombra sólida negra para dar estilo de dibujo/sticker retro */
+    filter: drop-shadow(4px 4px 0px black); 
+    display: block;
+}
+
+/* Rick y Morty Portal */
+.rick-morty-portal {
+    position: fixed;
+    top: 120px;
+    right: 10px;
+    width: 250px; /* Un poco más grande para que se aprecie el detalle */
+    z-index: 1002; /* Por encima de todo */
+    pointer-events: none; /* No interfiere con los clics en el blog */
+    transition: transform 0.3s ease;
+    display: block !important; /* Forzamos visibilidad */
+}
+
+.rick-morty-portal img {
+    max-width: 100%;
+    height: auto;
+    /* Brillo verde de portal y sombra sólida retro */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.7)) drop-shadow(4px 4px 0px black);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem;
+        padding-bottom: 80px;
+    }
+
+    .right-sidebar {
+        display: none; /* Ocultamos a Homer en móviles pequeños para ganar espacio */
+    }
+
+    .rick-morty-portal {
+        display: block; /* Lo hacemos visible */
+        width: 100px;  /* Pero mucho más pequeño */
+        top: 40px;
+        right: 5px;
+    }
+
+    .main-footer {
+        left: 0;
+        font-size: 0.5rem;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-name {
+        font-size: 0.8rem;
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .retro-box {
+        padding: 15px;
+    }
+}
